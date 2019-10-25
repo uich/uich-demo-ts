@@ -1,21 +1,19 @@
 export namespace LoggerFactory {
 
-    export const fromBunyan = async (logger: any): Promise<Logger> => {
-        const bunyan = await import('bunyan');
-
+    export const fromBunyan = (logger: any): Logger => {
         return {
             debug: (m, ...args) => logger.debug(m, ...args),
             info: (m, ...args) => logger.info(m, ...args),
             isDebugEnabled(): boolean {
-                return logger.level() <= bunyan.DEBUG;
+                return logger.level() <= 20;
             },
             isInfoEnabled(): boolean {
-                return logger.level() <= bunyan.INFO;
+                return logger.level() <= 30;
             }
         };
     };
 
-    export const fromLog4js = async (logger: any): Promise<Logger> => {
+    export const fromLog4js = (logger: any): Logger => {
         return {
             debug: (m, ...args) => logger.debug(m, ...args),
             info: (m, ...args) => logger.info(m, ...args),

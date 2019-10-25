@@ -2,5 +2,5 @@ import {Logger, LoggerFactory} from "./loggerFactory";
 
 export * from './loggerFactory';
 
-export const bunyan = async (logger: any): Promise<Logger> => await LoggerFactory.fromBunyan(logger);
-export const log4js = async (logger: any): Promise<Logger> => await LoggerFactory.fromLog4js(logger);
+export const bunyan = (logger: any): Logger => LoggerFactory.fromBunyan(logger);
+export const log4js = (logger: any): Logger => LoggerFactory.fromLog4js(logger);

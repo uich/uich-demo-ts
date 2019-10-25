@@ -1,6 +1,6 @@
 export declare namespace LoggerFactory {
-    const fromBunyan: (logger: any) => Promise<Logger>;
-    const fromLog4js: (logger: any) => Promise<Logger>;
+    const fromBunyan: (logger: any) => Logger;
+    const fromLog4js: (logger: any) => Logger;
 }
 export interface Logger {
     debug(m: string, ...args: any[]): void;
